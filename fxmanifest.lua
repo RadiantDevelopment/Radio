@@ -23,3 +23,9 @@ server_scripts {
   -- "Server/*.lua",
   -- "Server/Modules/*.lua"
 }
+
+dependencies {
+  'oxmysql',
+  'pma-voice',
+  'qb-core'
+}
