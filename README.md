@@ -23,6 +23,12 @@ This is a simple Radio resource made by @justcallme2k that is supposed to replac
 ```Radio:setFrequency``` Sets the player's radio frequency (number).
 
 
+## Previews
+![](https://i.imgur.com/kQrqD1Y.jpeg)
+![](https://i.imgur.com/fym4LtF.jpeg)
+![](https://i.imgur.com/SRmYfjD.jpeg)
+
+
 #### Thank you for choosing Radiant. 
 
 To receive updates, join our Discord @ dsc.gg/radiantdevelopment.
