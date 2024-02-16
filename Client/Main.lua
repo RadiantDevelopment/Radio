@@ -5,8 +5,20 @@ PlayerJob = {}
 
 AddEventHandler('onResourceStart', function()
     exports["pma-voice"]:setVoiceProperty("radioEnabled", false)
-    print('Radio disabled')
+    print('Players dsisconnected from radio.')
 end)
+
+
+-- Loads the requested animation
+local function LoadAnimDic(dict)
+    if not HasAnimDictLoaded(dict) then
+        RequestAnimDict(dict)
+        while not HasAnimDictLoaded(dict) do
+            Wait(0)
+        end
+    end
+end
+
 
 Radio = {
     notifyPlayer = QBCore.Functions.Notify,
@@ -37,13 +49,27 @@ Radio = {
     end,
 
     open = function()
+        LoadAnimDic("cellphone@")
+        TriggerEvent("attachItemRadio","radio01")
+		TaskPlayAnim(PlayerPedId(), "cellphone@", "cellphone_text_read_base", 2.0, 3.0, -1, 49, 0, 0, 0, 0)
+
+		radioProp = CreateObject(`prop_cs_hand_radio`, 1.0, 1.0, 1.0, 1, 1, 0)
+		AttachEntityToEntity(radioProp, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 57005), 0.14, 0.01, -0.02, 110.0, 120.0, -15.0, 1, 0, 0, 0, 2, 1)
+
         Radio.sendReactMessage('Radio:Open');
         SetNuiFocus(true, true);
         print(PlayerJob);
     end,
 
     close = function()
-        ClearPedTasks(PlayerPedId())
+        StopAnimTask(PlayerPedId(), "cellphone@", "cellphone_text_read_base", 1.0)
+		ClearPedTasks(PlayerPedId())
+
+		if radioProp ~= 0 then
+			DeleteObject(radioProp)
+			radioProp = 0
+		end
+        
         SetNuiFocus(false, false)
     end
 }
