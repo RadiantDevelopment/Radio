@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.Container {
+    position: fixed;
+    overflow: hidden;
+
+    height: 54vh;
+    width: 15vw;
+
+    right: 0;
+    bottom: 0;
+
+    background-image: url('../../../assets/Backgrounds/radio.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    z-index: 999;
+
+    .powerButton {
+        position: relative;
+        overflow: hidden;
+
+        height: 3.6vh;
+        width: 5.5vh;
+
+        transform: rotate(10deg);
+
+        margin: 22.2vh 19.5vh;
+        
+        cursor: pointer;
+    }
+
+    .screenContainer {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        height: 16.6vh;
+        width: 13.8vh;
+
+        background-color: transparent;
+
+        margin: -13vh 5.5vh;
+
+        .header {
+            position: relative;
+            overflow: hidden;
+
+            margin: .5vh;
+
+            font-family: 'Digital';
+            font-size: 2vh;
+            color: rgb(46, 46, 46);
+        }
+
+        .inputContainer {
+            position: relative;
+            overflow: hidden;
+
+            width: 10vh;
+            height: fit-content;
+
+            align-items: center;
+            background-color: transparent;
+
+            outline: none;
+            border: none;
+
+            text-align: center;
+
+            font-family: 'Digital';
+            font-size: 5vh;
+            color: black;
+
+            margin: 2vh 1vh;
+            padding: 1vh;
+        }
+    }
+}
