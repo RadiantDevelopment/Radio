@@ -3,11 +3,8 @@ local PlayerData = QBCore.Functions.GetPlayerData()
 
 PlayerJob = {}
 
-AddEventHandler('onResourceStart', function()
-    exports["pma-voice"]:setVoiceProperty("radioEnabled", false)
-    print('Players dsisconnected from radio.')
-end)
-
+-- Set the players' voice property "radioEnabled" to false on resource start / restart.
+exports["pma-voice"]:setVoiceProperty("radioEnabled", false)
 
 -- Loads the requested animation
 local function LoadAnimDic(dict)
