@@ -1,5 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local PlayerData = QBCore.Functions.GetPlayerData()
 
 PlayerJob = {}
 
@@ -28,12 +27,11 @@ Radio = {
     end,
 
     setFrequency = function(frequency)
-        local player = PlayerData
-        PlayerJob = player.job
-        print(json.encode(PlayerJob.name))
+        local player = QBCore.Functions.GetPlayerData()
+        print(json.encode(player.job.name))
         
         if frequency <= 20 then
-            if PlayerJob.name ~= 'police' then
+            if player.job.name ~= 'police' then
                 return Radio.notifyPlayer('Unable to connect to Government frequencies.', 'error')
             end
         end
