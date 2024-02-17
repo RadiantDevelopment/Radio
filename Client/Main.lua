@@ -30,9 +30,10 @@ Radio = {
     setFrequency = function(frequency)
         local player = PlayerData
         PlayerJob = player.job
+        print(json.encode(PlayerJob.name))
         
         if frequency <= 20 then
-            if PlayerJob ~= 'police' then
+            if PlayerJob.name ~= 'police' then
                 return Radio.notifyPlayer('Unable to connect to Government frequencies.', 'error')
             end
         end
