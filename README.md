@@ -1,6 +1,6 @@
-# A FiveM Radio resource brough to you by Radiant using the React UI Framework.
+# A FiveM Radio resource brought to you by Radiant using the React UI Framework.
 
-This is a simple Radio resource made by @justcallme2k that is supposed to replace the default 'qb-radio' resource with the core functionality of bringing a smooth experience for the user.
+This is a simple Radio resource made by @justcallme2k that is supposed to replace the default 'qb-radio' resource with the core functionality of bringing a smoother user experience.
 
 ```onResourceStart``` All players will be disconnected from their radios.
 
